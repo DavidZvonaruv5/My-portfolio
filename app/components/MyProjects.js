@@ -3,7 +3,7 @@ import React from "react";
 const MyProjects = () => {
   return (
     <>
-          <div className="w-6/12 text-white bg-zinc-700 border-r-2 border-zinc-900 ml-2">
+          <div className="w-6/12 text-white bg-zinc-700 mr-8 ml-8">
               <h1 className="text-2xl underline">My Projects</h1>
               <br />
         Lorem magna id laboris eu voluptate nisi ea. Nostrud laboris nisi duis

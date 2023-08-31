@@ -8,7 +8,7 @@ export default function Navbar() {
         <Link href="/"> <div className="text-xl font-bold">My Portfolio</div></Link>
         <ul className="flex space-x-4">
         <Link href="https://github.com/DavidZvonaruv5"><FaGithub className='text-[2rem] hover:animate-bounce' /></Link>
-        <Link href="https://www.linkedin.com/in/david-zvonar-0b4b0a1b0/"><FaLinkedin className='text-[2rem] hover:animate-bounce'/></Link>
+        <Link href="https://www.linkedin.com/in/david-zvonaruv-190a68185/"><FaLinkedin className='text-[2rem] hover:animate-bounce'/></Link>
           <li>
             <Link href="#Aboutme">
               <span className="cursor-pointer hover:text-gray-300">About Me</span>

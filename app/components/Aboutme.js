@@ -15,15 +15,15 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
 
   const words = text.split("\n\n");
   return (
-    <div className="w-6/12 text-white bg-zinc-700 border-r-2 border-zinc-900 ml-2">
+    <div className="w-6/12 text-white bg-zinc-700 border-r-2 border-zinc-900 ml-9 pr-6">
       <div id="Aboutme" className="text-s ">
-        <h1 className="text-2xl underline">About me</h1>
+        <h1 className="text-2xl underline mt-2">About me</h1>
         <br />
-        <p className="text-base leading-7">
+        <p className="text-base leading-7 ">
           {words.map((word, index) => (
             <span
               key={index}
-              className="inline-block transition hover:text-lime-100 hover:shadow-s"
+              className="inline-block transition hover:text-lime-100 hover:scale-105 "
             >
               {word}
             </span>
