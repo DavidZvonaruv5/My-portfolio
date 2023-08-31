@@ -1,9 +1,12 @@
-import Image from 'next/image'
 import "./globals.css"
+import Aboutme from "./components/Aboutme"
+
+
 export default function Home() {
   return (
-    <main>
-      
-    </main>
+    <main className='bg-zinc-700'>
+      <Aboutme />
+
+    </main >
   )
 }
