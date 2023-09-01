@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/core";
 
 const DavidZvonaruv5 = new Octokit({
-    auth: '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'
+    auth: process.env.API_KEY,
   })
   
 export default async function fetchUser() {
