@@ -25,7 +25,7 @@ export default function Navbar() {
           </button>
         </div>
         <div
-          className={`fixed top-0 right-0 w-64 h-[100vh] bg-black text-white transform transition-transform ${
+          className={`fixed top-0 right-0 overflow-y-auto w-64 h-[100vh] bg-[#010101] text-white transform transition-transform ${
             isOpen ? "translate-x-0" : "translate-x-full"
           } lg:hidden flex items-center justify-center`}
         >
