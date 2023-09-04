@@ -35,7 +35,7 @@ export default function Navbar() {
           >
             ✖
           </button>
-          <ul className="flex flex-col space-y-4">
+          <ul className="flex flex-col space-y-3 mt-[100px] ">
             <a
               href="DavidZvonaruv5_CV.pdf"
               download="David-Zvonaruv-CV"
