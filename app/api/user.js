@@ -1,16 +1,15 @@
 import { Octokit } from "@octokit/core";
 
-const DavidZvonaruv5 = new Octokit({
-    auth: process.env.API_KEY,
-  })
+export default async function fetchUser(token) {
+  try {
+    const octokit = new Octokit({
+      auth: token,
+    });
   
-export default async function fetchUser() {
-    const res = await DavidZvonaruv5.request('GET /user', {
-        headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
-        }
-    })
+    const res = await octokit.request('GET /user');
     return res.data;
+  } catch (error) {
+    console.error("Failed to fetch user:", error);
+    return null;
+  }
 }
-
-  
