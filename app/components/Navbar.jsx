@@ -31,11 +31,11 @@ export default function Navbar() {
         >
           <button
             onClick={toggleMenu}
-            className="absolute top-4 right-4 text-white text-2xl"
+            className="absolute top-2 right-2 text-white text-3xl"
           >
             ✖
           </button>
-          <ul className="flex flex-col space-y-3 mt-[100px] ">
+          <ul className="flex flex-col space-y-3 mr-[40px] ">
             <a
               href="DavidZvonaruv5_CV.pdf"
               download="David-Zvonaruv-CV"
