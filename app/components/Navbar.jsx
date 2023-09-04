@@ -12,7 +12,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black text-white mb-2 py-2 w-full shadow-md relative">
+    <nav className="bg-[#010101] text-white mb-2 py-2 w-full shadow-md relative">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
           <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4 gradient-text">
@@ -72,6 +72,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
+              <Link href="/#Skills">
+                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                  Skills
+                </span>
+              </Link>
+            </li>
+            <li>
               <Link href="/#projects">
                 <span className="cursor-pointer hover:text-gray-300 text-xl">
                   My Projects
@@ -120,6 +127,13 @@ export default function Navbar() {
             <Link href="/#Education">
               <span className="cursor-pointer hover:text-gray-300 text-xl">
                 Education
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#Skills">
+              <span className="cursor-pointer hover:text-gray-300 text-xl">
+                Skills
               </span>
             </Link>
           </li>
