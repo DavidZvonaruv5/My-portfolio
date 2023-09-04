@@ -17,7 +17,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
 
   const words = text.split("\n\n");
   return (
-    <div className="w-6/12 text-white bg-zinc-700 border-r-2 border-zinc-900 ml-9 pr-6 mb-5">
+    <div className="w-10/12 text-white bg-zinc-700 border-r-2 border-zinc-900 ml-4 mr-1  mb-5">
       <div id="Aboutme" className="text-s ">
         <h1 className="text-2xl underline mt-2">About me</h1>
         <br />
@@ -25,7 +25,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
           {words.map((word, index) => (
             <span
               key={index}
-              className="inline-block transition hover:text-lime-100 hover:scale-105 "
+              className="inline-block transition hover:text-lime-100"
             >
               {word}
             </span>

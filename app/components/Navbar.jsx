@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="bg-black text-white mb-2 py-2 w-full shadow-md relative">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
-          <div className="text-xl lg:text-2xl font-bold cursor-pointer flex-shrink-0 lg:ml-4">
+          <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4 gradient-text">
             My Portfolio
           </div>
         </Link>

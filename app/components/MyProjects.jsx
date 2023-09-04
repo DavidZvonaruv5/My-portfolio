@@ -14,14 +14,14 @@ export default function MyProjects({ projects }) {
   ));
 
   return (
-    <div className="w-6/12 text-white bg-zinc-700 mr-8 ml-8">
+    <div className="w-5/12 text-white bg-zinc-700  ml-6">
       <h1 className="text-2xl underline mt-2">My Projects</h1>
       <Image
         src={projects[0].owner.avatar_url}
         alt="David Zvonaruv profile picture"
-        width={100}
-        height={100}
-        className="mt-2 rounded-full border-4 border-double border-gray-500"
+        width={125}
+        height={125}
+        className="mt-2 rounded-full border-4 border-double border-gray-900"
       />
       {content}
     </div>

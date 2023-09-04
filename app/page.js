@@ -7,7 +7,7 @@ export default async function Home() {
   const projects = await repos(process.env.API_KEY);
   return (
     <main >
-      <div className='flex w-full  '>
+      <div className='grid grid-cols-2 md:grid-cols2 gap-4'>
         <Aboutme />
         <MyProjects projects={projects} />
         </div>
