@@ -6,7 +6,7 @@ import repos from "./api/repos";
 export default async function Home() {
   const projects = await repos(process.env.API_KEY);
   return (
-    <main className="overflow-hidden">
+    <main >
       <div className='flex'>
         <Aboutme />
         <MyProjects projects={projects} />

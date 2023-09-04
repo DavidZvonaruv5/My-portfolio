@@ -15,7 +15,7 @@ export default function MyProjects({ projects }) {
 
   return (
     <div className="w-5/12 text-white bg-zinc-700  ml-6">
-      <h1 className="text-2xl underline mt-2">My Projects</h1>
+      <h1 className="text-2xl underline mt-2  ">My Projects</h1>
       <Image
         src={projects[0].owner.avatar_url}
         alt="David Zvonaruv profile picture"
