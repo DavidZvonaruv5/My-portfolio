@@ -12,11 +12,11 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-[#010101] text-white mb-2 py-2 w-full shadow-md relative">
+    <nav className="bg-[#010101] text-white  py-2 w-full shadow-2xl relative">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
         <Link href="/">
           <div className="text-xl lg:text-3xl font-bold cursor-pointer flex-shrink-0 lg:ml-4 gradient-text">
-            My Portfolio
+            David Zvonaruv Portfolio
           </div>
         </Link>
         <div className="lg:hidden">
@@ -26,7 +26,7 @@ export default function Navbar() {
         </div>
         <div
           className={`fixed top-0 right-0 overflow-y-auto w-64 h-[100vh] bg-[#010101] text-white transform transition-transform ${
-            isOpen ? "translate-x-0" : "translate-x-full"
+            isOpen ? "translate-x-0  h-[100%]" : "translate-x-full"
           } lg:hidden flex items-center justify-center`}
         >
           <button
