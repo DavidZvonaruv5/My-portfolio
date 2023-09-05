@@ -19,7 +19,7 @@ export default function Recommendation() {
           <p></p>
           <span>{summery}</span>
         </section>
-        <h2 className="text-xl hover:">
+        <h2 className="text-xl hover:font-bold hover:underline hover:text-blue-300">
           <a
             href="/Recommendation.pdf"
             download="David-Zvonaruv-Recommendation"

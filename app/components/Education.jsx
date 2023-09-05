@@ -4,7 +4,7 @@ export default function Education() {
   const education = [
     {
       degree: "BSc in Software Engineering",
-      school: "Braude College of Engineering GPA:80",
+      school: "Braude College of Engineering GPA:80, starting my fourth year",
       year: "2020-present",
     },
     {

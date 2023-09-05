@@ -12,8 +12,7 @@ export default function ContactForm() {
   });
 
   const [message, setMessage] = useState(null);
-  const router = useRouter(); // for routing
-
+  const router = useRouter();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,7 +29,7 @@ export default function ContactForm() {
     if (message) {
       setTimeout(() => {
         setMessage(null);
-      }, 3000); // remove the message after 3 seconds
+      }, 3000);
     }
   }, [message]);
 
@@ -40,7 +39,7 @@ export default function ContactForm() {
         onSubmit={handleSubmit}
         className="bg-white p-10 rounded-lg shadow-md w-full max-w-lg"
       >
-        <h1 className="text-2xl mb-8 font-semibold">Contact Me</h1>
+        <h1 className="text-3xl mb-8 font-semibold">Contact Me</h1>
 
         <div className="mb-5">
           <label className="block text-xl mb-2">Name:</label>
@@ -91,12 +90,25 @@ export default function ContactForm() {
 
         {message && <div className="text-center mt-4">{message}</div>}
 
-        <button
-          type="submit"
-          className="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
-        >
-          Submit
-        </button>
+        <div className="flex justify-between">
+          <button
+            type="submit"
+            className="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+          >
+            Submit
+          </button>
+
+          <div>
+            <button
+              onClick={() => {
+                router.push("/");
+              }}
+              className="bg-blue-900 text-white p-3 rounded hover:bg-zinc-900"
+            >
+              Go Back
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
