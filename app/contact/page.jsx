@@ -1,113 +1,106 @@
 "use client";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import "../globals.css";
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
+export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState(false);
 
-  const [message, setMessage] = useState(null);
-  const router = useRouter();
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-  };
+    setSubmitting(true);
 
-  useEffect(() => {
-    if (message) {
-      setTimeout(() => {
-        setMessage(null);
-      }, 3000);
+    const body = { name: name, email: email, message: message };
+    try {
+      const response = await fetch("/api/send-mail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (response.ok) setSubmitSuccess(true);
+      else setSubmitError(true);
+    } catch (error) {
+      setSubmitError(true);
     }
-  }, [message]);
+    setSubmitting(false);
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-zinc-700">
       <form
-        onSubmit={handleSubmit}
+        onSubmit={handleFormSubmit}
         className="bg-white p-10 rounded-lg shadow-md w-full max-w-lg"
       >
-        <h1 className="text-3xl mb-8 font-semibold">Contact Me</h1>
+        <h2 className="text-3xl mb-8 font-semibold">Contact Us</h2>
 
         <div className="mb-5">
-          <label className="block text-xl mb-2">Name:</label>
+          <label className="block text-xl mb-2" htmlFor="first-name">
+            Full Name
+          </label>
           <input
             className="w-full p-2 border rounded"
             type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
+            name="first-name"
+            id="first-name"
+            autoComplete="given-name"
+            onChange={(e) => setName(e.target.value)}
             required
           />
         </div>
 
         <div className="mb-5">
-          <label className="block text-xl mb-2">Email:</label>
+          <label className="block text-xl mb-2" htmlFor="email">
+            Email address
+          </label>
           <input
             className="w-full p-2 border rounded"
-            type="email"
+            id="email"
             name="email"
-            value={formData.email}
-            onChange={handleChange}
+            type="email"
+            autoComplete="email"
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
 
         <div className="mb-5">
-          <label className="block text-xl mb-2">Subject:</label>
-          <input
-            className="w-full p-2 border rounded"
-            type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="mb-5">
-          <label className="block text-xl mb-2">Message:</label>
+          <label className="block text-xl mb-2" htmlFor="message">
+            Content
+          </label>
           <textarea
             className="w-full p-2 border rounded resize-none"
+            id="message"
             name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
+            rows={3}
+            onChange={(e) => setMessage(e.target.value)}
+            defaultValue={""}
+          />
         </div>
 
-        {message && <div className="text-center mt-4">{message}</div>}
+        {submitSuccess && (
+          <div className="text-center text-green-500 mt-4" role="alert">
+            Message sent successfully!
+          </div>
+        )}
+        {submitError && (
+          <div className="text-center text-red-500 mt-4" role="alert">
+            Error sending message. Please try again later.
+          </div>
+        )}
 
         <div className="flex justify-between">
           <button
+            id="submitButton"
             type="submit"
             className="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+            disabled={submitting}
           >
-            Submit
+            {submitting ? "Submitting..." : "Submit"}
           </button>
-
-          <div>
-            <button
-              onClick={() => {
-                router.push("/");
-              }}
-              className="bg-blue-900 text-white p-3 rounded hover:bg-zinc-900"
-            >
-              Go Back
-            </button>
-          </div>
         </div>
       </form>
     </div>
