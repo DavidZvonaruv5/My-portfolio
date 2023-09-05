@@ -22,10 +22,10 @@ export default function Education() {
 
       <div id="Education" className="text-base leading-7">
         {education.map((edu, index) => (
-          <div key={index} className="mb-4">
+          <div key={index} className="mb-4 hover:text-lime-100">
             <h3 className="text-l font-semibold">{edu.degree}</h3>
             <p className="text-s">{edu.school}</p>
-            <p className="text-xs text-gray-400">{edu.year}</p>
+            <p className="text-xs text-gray-400">⏲{edu.year}</p>
           </div>
         ))}
       </div>

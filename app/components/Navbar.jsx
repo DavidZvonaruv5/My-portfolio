@@ -72,6 +72,13 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
+              <Link href="/#Recommendation">
+                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                  Recommendation
+                </span>
+              </Link>
+            </li>
+            <li>
               <Link href="/#Skills">
                 <span className="cursor-pointer hover:text-gray-300 text-xl">
                   Skills
@@ -127,6 +134,13 @@ export default function Navbar() {
             <Link href="/#Education">
               <span className="cursor-pointer hover:text-gray-300 text-xl">
                 Education
+              </span>
+            </Link>
+          </li>
+          <li>
+            <Link href="/#Recommendation">
+              <span className="cursor-pointer hover:text-gray-300 text-xl">
+                Recommendation
               </span>
             </Link>
           </li>

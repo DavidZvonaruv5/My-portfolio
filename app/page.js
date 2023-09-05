@@ -3,6 +3,7 @@ import Aboutme from "./components/Aboutme"
 import Education from "./components/Education"
 import MyProjects from "./components/MyProjects"
 import Skills from "./components/Skills"
+import Recommendation from "./components/Recommendation"
 import repos from "./api/repos";
 
 export default async function Home() {
@@ -13,7 +14,9 @@ export default async function Home() {
         <div className="w-screen border-r-2 border-zinc-900 p-2 gap-2 ">
           <Aboutme/>
           <Education />
+          <Recommendation />
           <Skills />
+         
         </div>
         <div className="w-5/12">
           <MyProjects projects={projects} />
