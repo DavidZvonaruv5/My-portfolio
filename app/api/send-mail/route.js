@@ -26,9 +26,6 @@ export async function POST(req) {
       Message: ${reqbody['message']}
     `
   };
-    const sent = await new Promise(() => {
       const result = transporter.sendMail(mailOptionsDavid)
-      return NextResponse(json({ result: 'Email sent' }),{status: 200})
-      
-    })
+      return new NextResponse({ result: 'Email sent' })
 }

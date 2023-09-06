@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useRouter } from "next/navigation"; // Corrected the import
 import "../globals.css";
 
 export default function Contact() {
@@ -9,20 +10,29 @@ export default function Contact() {
   const [submitting, setSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
+  const router = useRouter();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
 
-    const body = { name: name, email: email, message: message };
+    const body = { name, email, message };
     try {
       const response = await fetch("/api/send-mail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      if (response.ok) setSubmitSuccess(true);
-      else setSubmitError(true);
+      if (response.ok) {
+        setSubmitSuccess(true);
+        setRedirecting(true);
+        setTimeout(() => {
+          router.push("/");
+        }, 1500);
+      } else {
+        setSubmitError(true);
+      }
     } catch (error) {
       setSubmitError(true);
     }
@@ -30,15 +40,17 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-zinc-700">
+    <div className="flex justify-center items-center min-h-screen bg-zinc-700 px-4 sm:px-0">
       <form
         onSubmit={handleFormSubmit}
-        className="bg-white p-10 rounded-lg shadow-md w-full max-w-lg"
+        className="bg-white p-4 sm:p-10 rounded-lg shadow-md w-full max-w-xs sm:max-w-lg"
       >
-        <h2 className="text-3xl mb-8 font-semibold">Contact Us</h2>
+        <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-8 font-semibold">
+          Contact Us
+        </h2>
 
-        <div className="mb-5">
-          <label className="block text-xl mb-2" htmlFor="first-name">
+        <div className="mb-4 sm:mb-5">
+          <label className="block text-lg sm:text-xl mb-2" htmlFor="first-name">
             Full Name
           </label>
           <input
@@ -52,8 +64,8 @@ export default function Contact() {
           />
         </div>
 
-        <div className="mb-5">
-          <label className="block text-xl mb-2" htmlFor="email">
+        <div className="mb-4 sm:mb-5">
+          <label className="block text-lg sm:text-xl mb-2" htmlFor="email">
             Email address
           </label>
           <input
@@ -67,8 +79,8 @@ export default function Contact() {
           />
         </div>
 
-        <div className="mb-5">
-          <label className="block text-xl mb-2" htmlFor="message">
+        <div className="mb-4 sm:mb-5">
+          <label className="block text-lg sm:text-xl mb-2" htmlFor="message">
             Content
           </label>
           <textarea
@@ -82,24 +94,35 @@ export default function Contact() {
         </div>
 
         {submitSuccess && (
-          <div className="text-center text-green-500 mt-4" role="alert">
+          <div className="text-center text-green-500 mt-2 sm:mt-4" role="alert">
             Message sent successfully!
           </div>
         )}
         {submitError && (
-          <div className="text-center text-red-500 mt-4" role="alert">
+          <div className="text-center text-red-500 mt-2 sm:mt-4" role="alert">
             Error sending message. Please try again later.
           </div>
         )}
+        {redirecting && (
+          <div className="text-center text-blue-500 mt-2 sm:mt-4" role="alert">
+            Redirecting to home page...
+          </div>
+        )}
 
-        <div className="flex justify-between">
+        <div className="flex flex-col sm:flex-row justify-between mt-4">
           <button
             id="submitButton"
             type="submit"
-            className="bg-blue-500 text-white p-3 rounded hover:bg-blue-600"
+            className="bg-blue-500 text-white p-3 rounded hover:bg-blue-600 mb-2 sm:mb-0"
             disabled={submitting}
           >
             {submitting ? "Submitting..." : "Submit"}
+          </button>
+          <button
+            onClick={() => router.back()}
+            className="bg-zinc-700 text-white p-3 rounded hover:bg-zinc-900"
+          >
+            Go Back
           </button>
         </div>
       </form>
