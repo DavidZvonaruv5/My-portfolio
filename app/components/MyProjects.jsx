@@ -14,7 +14,7 @@ export default function MyProjects({ projects }) {
   ));
 
   return (
-    <div className="w-full text-white bg-zinc-700  ml-6">
+    <div id="projects" className="w-full text-white bg-zinc-700  ml-6">
       <h1 className="text-2xl underline mt-2  ">My Projects</h1>
       <Image
         src={projects[0].owner.avatar_url}

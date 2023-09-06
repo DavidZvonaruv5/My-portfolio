@@ -59,42 +59,60 @@ export default function Navbar() {
             </Link>
             <li>
               <Link href="/#Aboutme">
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   About Me
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/#Education">
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   Education
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/#Recommendation">
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   Recommendation
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/#Skills">
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   Skills
                 </span>
               </Link>
             </li>
             <li>
               <Link href="/#projects">
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   My Projects
                 </span>
               </Link>
             </li>
             <li>
               <Link href={`/contact`}>
-                <span className="cursor-pointer hover:text-gray-300 text-xl">
+                <span
+                  onClick={() => setIsOpen(false)}
+                  className="cursor-pointer hover:text-gray-300 text-xl"
+                >
                   Contact me
                 </span>
               </Link>
@@ -153,7 +171,10 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/#projects">
-              <span className="cursor-pointer hover:text-gray-300 text-xl">
+              <span
+                onClick={() => setIsOpen(false)}
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
                 My Projects
               </span>
             </Link>
