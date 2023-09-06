@@ -4,9 +4,8 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
 
   const reqbody = await req.json();
-  console.log(reqbody);
+
   const transporter = createTransport({
-    host: 'smtp.office365.com',
     host: 'smtp.office365.com',
     port: 587,
     secure: false,
