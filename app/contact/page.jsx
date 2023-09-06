@@ -31,7 +31,7 @@ export default function Contact() {
       router.push("/");
     }, 1500);
 
-    submitting(false);
+    setSubmitting(false);
   };
 
   return (

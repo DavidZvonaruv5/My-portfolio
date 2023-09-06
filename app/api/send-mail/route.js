@@ -1,9 +1,9 @@
 import { createTransport } from "nodemailer";
 import { NextResponse } from "next/server";
 
-export async function POST(req,res) {
+export async function POST(request) {
 
-  const reqbody = await req.json();
+  const reqbody = await request.json();
 
   const transporter = createTransport({
     host: 'smtp.office365.com',
@@ -26,30 +26,11 @@ export async function POST(req,res) {
     `
   };
 
-  const sendMail = (mailOptions, callback) => {
-    transporter.sendMail(mailOptions, (error, info) => {
-      if (error) {
-        console.error('Error sending email:', error);
-        callback(false); // Pass false to the callback if there's an error
-      } else {
-        console.log('Email sent:', info.response);
-        callback(true); // Pass true to the callback if email sent successfully
-      }
-    });
+  try {
+    await transporter.sendMail(mailOptions);
+  return NextResponse.json({message: 'Email sent successfully'}, {status: 200})
+  } catch (error) {
+    return NextResponse.json({message: 'Email failed to send'}, {status: 500})
   }
-
-  new Promise((resolve) => sendMail(mailOptions, 0, resolve)).then((results) => {
-    const mailsent = results.every((results) => results === true);
-    if (mailsent) {
-      results.statusCode = 200;
-      res.json({ message: 'Email sent successfully' });
-    } else {
-      results.statusCode = 500;
-      res.json({ message: 'Email failed to send' });
-    }
-  }).catch((error) => {
-          res.statusCode = 200;
-          res.json({ message: 'Email sent successfully' });
-  })
 
 }
