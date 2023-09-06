@@ -11,6 +11,12 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
+  const handlePhoneClick = () => {
+    if (window.confirm("Do you want to make a call?")) {
+      window.location.href = "tel:+972543111631";
+    }
+  };
+
   return (
     <nav className="bg-[#010101] text-white  py-2 w-full shadow-2xl relative">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
@@ -54,7 +60,7 @@ export default function Navbar() {
             <Link href="mailto:davidze99@gmail.com">
               <HiOutlineMail className="ml-1  text-[2.2rem] hover:animate-bounce text-gray-300" />
             </Link>
-            <Link href="tel:+972543111631">
+            <Link onClick={handlePhoneClick} href="tel:+972543111631">
               <FaPhoneAlt className="ml-1  text-[1.7rem] hover:animate-bounce text-gray-300" />
             </Link>
             <li>
