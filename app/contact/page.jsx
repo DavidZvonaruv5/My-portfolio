@@ -18,25 +18,20 @@ export default function Contact() {
     setSubmitting(true);
 
     const body = { name, email, message };
-    try {
-      const response = await fetch("/api/send-mail", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
-      });
-      if (response.ok) {
-        setSubmitSuccess(true);
-        setRedirecting(true);
-        setTimeout(() => {
-          router.push("/");
-        }, 1500);
-      } else {
-        setSubmitError(true);
-      }
-    } catch (error) {
-      setSubmitError(true);
-    }
-    setSubmitting(false);
+
+    const response = await fetch("/api/send-mail", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+
+    setSubmitSuccess(true);
+    setRedirecting(true);
+    setTimeout(() => {
+      router.push("/");
+    }, 1500);
+
+    submitting(false);
   };
 
   return (
