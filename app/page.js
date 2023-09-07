@@ -12,13 +12,13 @@ export default async function Home() {
     <main >
       <div className='flex flex-col  md:flex-row'>
         <div className="w-screen border-r-2 border-zinc-900 p-2 gap-2 ">
-          <Aboutme/>
+          <Aboutme />
           <Education />
           <Recommendation />
           <Skills />
          
         </div>
-        <div className="w-5/12">
+        <div className="md:w-6/12">
           <MyProjects projects={projects} />
           </div>
         </div>

@@ -7,14 +7,14 @@ export default function MyProjects({ projects }) {
     return <div>Loading...</div>;
   }
 
-  const content = projects.map((project) => (
+  const content = projects.map((project, index) => (
     <Link href={`/projects/${project.id}`} key={project.id}>
-      <Project project={project} />
+      <Project project={project} index={index} />
     </Link>
   ));
 
   return (
-    <div id="projects" className="w-full text-white bg-zinc-700  ml-6">
+    <div id="projects" className="text-white bg-zinc-700  ml-6 mb-5">
       <h1 className="text-2xl underline mt-2  ">My Projects</h1>
       <Image
         src={projects[0].owner.avatar_url}

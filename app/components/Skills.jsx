@@ -6,9 +6,11 @@ export default function Skills() {
     "TypeScript",
     "React",
     "NextJS",
+    "TailWindCSS",
     "MongoDB",
     "SQL",
     "Python",
+    "Flask",
     "Git",
     "HTML",
     "CSS",
@@ -16,7 +18,9 @@ export default function Skills() {
     "Google console",
     "ML",
     "API integration & development",
+    "RESTful API Development",
     "Java",
+    "JavaFX",
   ];
 
   return (
@@ -31,7 +35,7 @@ export default function Skills() {
       <div className="flex flex-wrap">
         {skills.map((skill, index) => (
           <div key={index} className="flex">
-            <p className="border-2 border-blue-600 px-6 py-2 text-lg bg-transparent text-white hover:text-gray-200 skill-hover hover:bg-[#333] m-1 rounded-3xl">
+            <p className="border-2 border-blue-600 px-10 py-3 text-lg bg-transparent text-white hover:text-gray-200 skill-hover hover:bg-[#333] m-1 rounded-3xl">
               {skill}
             </p>
           </div>
