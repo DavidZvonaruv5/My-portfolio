@@ -43,7 +43,7 @@ export default function MyProjects({ projects }) {
         alt="David Zvonaruv profile picture"
         width={130}
         height={130}
-        className="mt-2 rounded-full border-4 border-double border-gray-900"
+        className="mt-2 rounded-full border-4 border-double border-gray-200"
       />
       {content}
     </div>
