@@ -87,12 +87,6 @@ export default async function ProjectPage({ params }) {
   return (
     <div className="text-white bg-transparent ml-6 mb-5  min-h-screen flex flex-col ">
       {projectDetails}
-      <Link
-        href="/"
-        className="text-xl border-2 border-white ml-[150px] mt-5 p-2 rounded text-center  w-[150px]  hover:bg-white hover:text-black hover:border-black hover:border-s-5 hover:shadow-xl"
-      >
-        Go Back
-      </Link>
     </div>
   );
 }
