@@ -24,6 +24,10 @@ export default function Navbar() {
     window.location.hash = "";
     window.location.hash = "Recommendation";
   };
+  const handleAboutmeClick = () => {
+    window.location.hash = "";
+    window.location.hash = "Aboutme";
+  };
 
   return (
     <nav className="bg-[#010101] text-white  py-2 w-full shadow-2xl relative">

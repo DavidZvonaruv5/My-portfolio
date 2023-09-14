@@ -1,9 +1,27 @@
 "use client";
-import { useState, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Aboutme() {
   const [Showmore, setShowmore] = useState("false");
   const aboutMeRef = useRef(null);
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === "#Aboutme") {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 800);
+      }
+    };
+
+    checkHash();
+
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+    };
+  }, []);
 
   const text = `Hello! I'm David Zvonaruv, a Software Engineer. Let me tell you a bit about myself.
 
@@ -68,7 +86,9 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
       <div className="text-s w ">
         <h1
           id="Aboutme"
-          className="text-2xl underline mt-2 underline-color-change"
+          className={`text-2xl underline mt-2 underline-color-change ${
+            highlight ? "gradient-text-2" : ""
+          }`}
           ref={aboutMeRef}
         >
           About me
