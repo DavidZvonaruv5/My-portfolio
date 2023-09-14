@@ -141,6 +141,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+
         <ul className={`hidden lg:flex lg:space-x-6 lg:justify-end`}>
           <a
             href="DavidZvonaruv5_CV.pdf"
@@ -160,7 +161,12 @@ export default function Navbar() {
 
           <li>
             <Link href="/#Aboutme">
-              <span className="cursor-pointer hover:text-gray-300 text-xl">
+              <span
+                onClick={() => {
+                  handleAboutmeClick();
+                }}
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
                 About Me
               </span>
             </Link>
@@ -170,7 +176,6 @@ export default function Navbar() {
               <span
                 onClick={() => {
                   handleEducationClick();
-                  setIsOpen(false);
                 }}
                 className="cursor-pointer hover:text-gray-300 text-xl"
               >
