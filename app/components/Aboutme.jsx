@@ -33,12 +33,12 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
           </span>
         ))}
       </p>
-      <p
+      <span
         onClick={() => setShowmore(!Showmore)}
-        className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
+        className="hover:cursor-pointer text-md text-neutral-200 hover:text-neutral-300 hover:glow"
       >
         show less...
-      </p>
+      </span>
     </div>
   );
 
@@ -46,12 +46,12 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
     <div>
       {" "}
       <p className="text-base leading-7 "> {words[0]} </p>
-      <p
+      <span
         onClick={() => setShowmore(!Showmore)}
         className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
       >
         show more...
-      </p>
+      </span>
     </div>
   );
 
