@@ -1,8 +1,9 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function Aboutme() {
   const [Showmore, setShowmore] = useState("false");
+  const aboutMeRef = useRef(null);
 
   const text = `Hello! I'm David Zvonaruv, a Software Engineer. Let me tell you a bit about myself.
 
@@ -20,6 +21,13 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
 
   const words = text.split("\n\n");
 
+  const ShowHideContent = () => {
+    setShowmore(!Showmore);
+    if (aboutMeRef.current) {
+      aboutMeRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const moreContent = (
     <div>
       {" "}
@@ -34,7 +42,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
         ))}
       </p>
       <span
-        onClick={() => setShowmore(!Showmore)}
+        onClick={ShowHideContent}
         className="hover:cursor-pointer text-md text-neutral-200 hover:text-neutral-300 hover:glow"
       >
         show less...
@@ -47,7 +55,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
       {" "}
       <p className="text-base leading-7 "> {words[0]} </p>
       <span
-        onClick={() => setShowmore(!Showmore)}
+        onClick={ShowHideContent}
         className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
       >
         show more...
@@ -57,12 +65,20 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
 
   return (
     <div className="text-white bg-zinc-700  ml-3 mr-[2%] ">
-      <div id="Aboutme" className="text-s w ">
-        <h1 className="text-2xl underline mt-2 underline-color-change">
+      <div className="text-s w ">
+        <h1
+          id="Aboutme"
+          className="text-2xl underline mt-2 underline-color-change"
+          ref={aboutMeRef}
+        >
           About me
         </h1>
         <br />
-        {Showmore ? lessContent : moreContent}
+        {Showmore ? (
+          <div onClick={ShowHideContent}>{lessContent}</div>
+        ) : (
+          <div onClick={ShowHideContent}>{moreContent}</div>
+        )}
       </div>
       <br />
     </div>
