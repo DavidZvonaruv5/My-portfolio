@@ -1,6 +1,9 @@
-import Link from "next/link";
+"use client";
+import { useState } from "react";
 
 export default function Aboutme() {
+  const [Showmore, setShowmore] = useState("false");
+
   const text = `Hello! I'm David Zvonaruv, a Software Engineer. Let me tell you a bit about myself.
 
 Passionate about embracing emerging technologies, I am driven by a relentless pursuit of learning. My commitment to self-improvement empowers me to explore new horizons and stay at the forefront of innovation. Whether it's diving into new languages, frameworks, or paradigms, I thrive on the excitement of expanding my skill set.
@@ -17,23 +20,49 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
 
   const words = text.split("\n\n");
 
+  const moreContent = (
+    <div>
+      {" "}
+      <p className="text-base leading-7 ">
+        {words.map((word, index) => (
+          <span
+            key={index}
+            className="inline-block transition hover:text-lime-100"
+          >
+            {word}
+          </span>
+        ))}
+      </p>
+      <p
+        onClick={() => setShowmore(!Showmore)}
+        className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
+      >
+        show less...
+      </p>
+    </div>
+  );
+
+  const lessContent = (
+    <div>
+      {" "}
+      <p className="text-base leading-7 "> {words[0]} </p>
+      <p
+        onClick={() => setShowmore(!Showmore)}
+        className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
+      >
+        show more...
+      </p>
+    </div>
+  );
+
   return (
-    <div className="text-white bg-zinc-700  ml-3 mr-[5%] ">
+    <div className="text-white bg-zinc-700  ml-3 mr-[2%] ">
       <div id="Aboutme" className="text-s w ">
         <h1 className="text-2xl underline mt-2 underline-color-change">
           About me
         </h1>
         <br />
-        <p className="text-base leading-7 ">
-          {words.map((word, index) => (
-            <span
-              key={index}
-              className="inline-block transition hover:text-lime-100"
-            >
-              {word}
-            </span>
-          ))}
-        </p>
+        {Showmore ? lessContent : moreContent}
       </div>
       <br />
     </div>

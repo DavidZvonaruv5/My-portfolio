@@ -32,3 +32,8 @@
     box-shadow: 0 0 10px 1px #007bff;
     transition: box-shadow 0.3s ease-in-out;
   }
+
+  .hover\:glow:hover {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 3px #000, 0 0 3px #000, 0 0 5px #000, 0 0 10px #000, 0 0 5px #fff;
+  }
+  

@@ -1,6 +1,19 @@
 import fetchRepos from "../../api/repos";
 import "../../globals.css";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  SiTailwindcss,
+  SiReactquery,
+  SiMongodb,
+  SiFastapi,
+  SiJupyter,
+  SiPython,
+  SiMysql,
+} from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+import { BiLogoJava } from "react-icons/bi";
+import { Oi } from "next/font/google";
 
 export default async function ProjectPage({ params }) {
   const icons = ["🐍", "⚙️", "☕", "⚛️", "🎲", "🎨", "🔥", "🌐", "🍶", "🍫"];
@@ -42,23 +55,25 @@ export default async function ProjectPage({ params }) {
     if (String(project.id) === params.projectId) {
       return (
         <div key={project.id} className="text-white bg-zinc-700 ml-6 mb-5">
-          <h1 className="text-6xl underline mt-2 mb-[40px] text-center">
+          <h1 className="text-6xl  mt-2 mb-[40px] text-center">
             {project.name}
           </h1>
-          <h2 className="text-3xl text-center underline mb-5 ">Description</h2>
+          <h2 className="text-3xl text-center  mb-5 ">Description</h2>
           <p className="text-lg mb-10 text-center">{info[index]}</p>
-          <h2 className="text-3xl text-center underline mb-5 ">
-            Skils I Learned
-          </h2>
+          <h2 className="text-3xl text-center  mb-5 ">Skills I Learned</h2>
           <p className="text-md mb-10 text-center">{technologies[index]}</p>
-          <h2 className="text-3xl text-center underline mb-5 ">
-            Technologies used
-          </h2>
+          <h2 className="text-3xl text-center  mb-5 ">Technologies used</h2>
           <div className="text-4xl text-center mb-10">{icons[index]}</div>
-          <h2 className="text-3xl text-center underline mb-5 ">
-            GitHub Repository
-          </h2>
-          <div className="text-4xl text-center "></div>
+          <h2 className="text-3xl text-center  mb-5 ">GitHub Repository</h2>
+          <Link href={project.html_url} className="text-center">
+            <Image
+              className="rounded m-auto"
+              src="/GitHub.gif"
+              alt="GitHub GIF"
+              width={200}
+              height={150}
+            />
+          </Link>
         </div>
       );
     }
@@ -74,7 +89,7 @@ export default async function ProjectPage({ params }) {
       {projectDetails}
       <Link
         href="/"
-        className="text-xl border-2 border-white mt-5 p-2 rounded text-center block w-[150px] place-content-center hover:bg-white hover:text-black"
+        className="text-xl border-2 border-white ml-[150px] mt-5 p-2 rounded text-center  w-[150px]  hover:bg-white hover:text-black hover:border-black hover:border-s-5 hover:shadow-xl"
       >
         Go Back
       </Link>

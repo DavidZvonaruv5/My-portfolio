@@ -57,9 +57,7 @@ export default function Navbar() {
             <Link href="https://www.linkedin.com/in/david-zvonaruv-190a68185/">
               <FaLinkedin className="text-[2rem] hover:animate-bounce" />
             </Link>
-            <Link href="mailto:davidze99@gmail.com">
-              <HiOutlineMail className="ml-1  text-[2.2rem] hover:animate-bounce text-gray-300" />
-            </Link>
+
             <Link onClick={handlePhoneClick} href="tel:+972543111631">
               <FaPhoneAlt className="ml-1  text-[1.7rem] hover:animate-bounce text-gray-300" />
             </Link>
@@ -141,12 +139,7 @@ export default function Navbar() {
           <Link href="https://www.linkedin.com/in/david-zvonaruv-190a68185/">
             <FaLinkedin className="text-[2rem] hover:animate-bounce" />
           </Link>
-          <Link href="mailto:davidze99@gmail.com">
-            <HiOutlineMail className="ml-1  text-[2.2rem] hover:animate-bounce text-gray-300" />
-          </Link>
-          <Link href="tel:+972543111631">
-            <FaPhoneAlt className="ml-1  text-[1.7rem] hover:animate-bounce text-gray-300" />
-          </Link>
+
           <li>
             <Link href="/#Aboutme">
               <span className="cursor-pointer hover:text-gray-300 text-xl">
