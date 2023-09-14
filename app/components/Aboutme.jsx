@@ -61,7 +61,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
       </p>
       <span
         onClick={ShowHideContent}
-        className="hover:cursor-pointer text-md text-neutral-200 hover:text-neutral-300 hover:glow"
+        className="hover:cursor-pointer text-md text-neutral-200 hover:text-neutral-300 hover:glow "
       >
         show less...
       </span>
@@ -71,10 +71,10 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
   const lessContent = (
     <div>
       {" "}
-      <p className="text-base leading-7 "> {words[0]} </p>
+      <p className="text-base leading-7 hover:text-lime-100"> {words[0]} </p>
       <span
         onClick={ShowHideContent}
-        className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow"
+        className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow "
       >
         show more...
       </span>
@@ -82,7 +82,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
   );
 
   return (
-    <div className="text-white bg-zinc-700  ml-3 mr-[2%] ">
+    <div className="text-white bg-transparent  ml-3 mr-[2%] ">
       <div className="text-s w ">
         <h1
           id="Aboutme"

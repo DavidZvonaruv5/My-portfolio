@@ -33,7 +33,7 @@ export default function Recommendation() {
     </div>
   );
   return (
-    <div className=" text-white bg-zinc-700 ml-3">
+    <div className=" text-white bg-transperent ml-3">
       <h1
         id="Recommendation"
         className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}

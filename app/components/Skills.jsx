@@ -44,7 +44,7 @@ export default function Skills() {
   ];
 
   return (
-    <div className=" text-white bg-zinc-700 ml-3">
+    <div className=" text-white bg-transperent ml-3">
       <br />
 
       <h1
@@ -58,7 +58,7 @@ export default function Skills() {
       <div className="flex flex-wrap">
         {skills.map((skill, index) => (
           <div key={index} className="flex">
-            <p className="border-2 border-blue-600 px-10 py-3 text-lg bg-transparent text-white hover:text-gray-200 skill-hover hover:bg-[#333] m-1 rounded-3xl">
+            <p className="border-2 border-blue-600 px-10 py-3 text-lg bg-transparent text-white hover:text-gray-200 skill-hover hover:bg-[#0d0d0d] m-1 rounded-3xl">
               {skill}
             </p>
           </div>

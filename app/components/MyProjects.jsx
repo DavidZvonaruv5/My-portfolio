@@ -34,7 +34,7 @@ export default function MyProjects({ projects }) {
   ));
 
   return (
-    <div id="projects" className="text-white bg-zinc-700  ml-6 mb-5">
+    <div id="projects" className="text-white bg-transparent  ml-6 mb-5">
       <h1
         className={`text-2xl underline mt-2  ${
           highlight ? "gradient-text-2" : ""
@@ -45,8 +45,8 @@ export default function MyProjects({ projects }) {
       <Image
         src={projects[0].owner.avatar_url}
         alt="David Zvonaruv profile picture"
-        width={125}
-        height={125}
+        width={130}
+        height={130}
         className="mt-2 rounded-full border-4 border-double border-gray-900"
       />
       {content}

@@ -37,7 +37,7 @@ export default function Education() {
   ];
 
   return (
-    <div className=" text-white bg-zinc-700 ml-3">
+    <div className=" text-white bg-transparent ml-3">
       <h1
         id="Education"
         className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}

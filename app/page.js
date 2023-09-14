@@ -11,7 +11,7 @@ export default async function Home() {
   return (
     <main >
       <div className='flex flex-col  md:flex-row'>
-        <div className="w-screen border-r-2 border-zinc-900 p-2 gap-2 ">
+        <div className="w-screen border-r-2 border-zinc-700 p-2 gap-2 ">
           <Aboutme />
           <Education />
           <Recommendation />

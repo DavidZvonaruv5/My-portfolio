@@ -18,6 +18,12 @@
       background-position: 0% 50%;
     }
   }
+  .custom-bg {
+    background-image: url('../public/Background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .gradient-text {
     background: linear-gradient(270deg, lightblue, goldenrod);
