@@ -54,7 +54,7 @@ export default async function ProjectPage({ params }) {
   const projectDetails = projects.map((project, index) => {
     if (String(project.id) === params.projectId) {
       return (
-        <div key={project.id} className="text-white bg-zinc-700 ml-6 mb-5">
+        <div key={project.id} className="text-white bg-transparent ml-6 mb-5">
           <h1 className="text-6xl  mt-2 mb-[40px] text-center">
             {project.name}
           </h1>
@@ -85,7 +85,7 @@ export default async function ProjectPage({ params }) {
   }
 
   return (
-    <div className="text-white bg-zinc-700 ml-6 mb-5  min-h-screen flex flex-col ">
+    <div className="text-white bg-transparent ml-6 mb-5  min-h-screen flex flex-col ">
       {projectDetails}
       <Link
         href="/"

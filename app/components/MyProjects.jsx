@@ -35,11 +35,7 @@ export default function MyProjects({ projects }) {
 
   return (
     <div id="projects" className="text-white bg-transparent  ml-6 mb-5">
-      <h1
-        className={`text-2xl underline mt-2  ${
-          highlight ? "gradient-text-2" : ""
-        }`}
-      >
+      <h1 className={`text-3xl  mt-2  ${highlight ? "gradient-text-2" : ""}`}>
         My Projects
       </h1>
       <Image

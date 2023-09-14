@@ -40,7 +40,7 @@ export default function Education() {
     <div className=" text-white bg-transparent ml-3">
       <h1
         id="Education"
-        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+        className={`text-3xl  ${highlight ? "gradient-text-2" : ""}`}
       >
         Education
       </h1>

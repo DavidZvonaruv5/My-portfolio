@@ -49,7 +49,7 @@ export default function Skills() {
 
       <h1
         id="Skills"
-        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+        className={`text-3xl  ${highlight ? "gradient-text-2" : ""}`}
       >
         Skills
       </h1>

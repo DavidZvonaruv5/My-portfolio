@@ -36,7 +36,7 @@ export default function Recommendation() {
     <div className=" text-white bg-transperent ml-3">
       <h1
         id="Recommendation"
-        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+        className={`text-3xl  ${highlight ? "gradient-text-2" : ""}`}
       >
         Recommendation
       </h1>

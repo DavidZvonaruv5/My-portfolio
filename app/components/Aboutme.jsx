@@ -86,9 +86,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
       <div className="text-s w ">
         <h1
           id="Aboutme"
-          className={`text-2xl underline mt-2  ${
-            highlight ? "gradient-text-2" : ""
-          }`}
+          className={`text-3xl  mt-2  ${highlight ? "gradient-text-2" : ""}`}
           ref={aboutMeRef}
         >
           About me
