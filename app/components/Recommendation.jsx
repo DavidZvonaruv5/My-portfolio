@@ -1,4 +1,26 @@
+"use client";
+import { useState, useEffect } from "react";
+
 export default function Recommendation() {
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === "#Recommendation") {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 800);
+      }
+    };
+
+    checkHash();
+
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+    };
+  }, []);
+
   const summery = (
     <div className="hover:text-lime-100">
       {" "}
@@ -12,9 +34,14 @@ export default function Recommendation() {
   );
   return (
     <div className=" text-white bg-zinc-700 ml-3">
-      <h1 className="text-2xl underline">Recommendation</h1>
+      <h1
+        id="Recommendation"
+        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+      >
+        Recommendation
+      </h1>
       <br />
-      <div id="Recommendation" className="text-base leading-7">
+      <div className="text-base leading-7">
         <section className="mb-2">
           <p></p>
           <span>{summery}</span>

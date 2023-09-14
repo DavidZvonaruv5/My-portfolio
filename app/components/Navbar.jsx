@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaDownload, FaPhoneAlt } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,6 +19,10 @@ export default function Navbar() {
   const handleEducationClick = () => {
     window.location.hash = "";
     window.location.hash = "Education";
+  };
+  const handleRecommendationClick = () => {
+    window.location.hash = "";
+    window.location.hash = "Recommendation";
   };
 
   return (
@@ -92,7 +95,10 @@ export default function Navbar() {
             <li>
               <Link href="/#Recommendation">
                 <span
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    handleRecommendationClick();
+                    setIsOpen(false);
+                  }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
                   Recommendation
@@ -170,7 +176,13 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/#Recommendation">
-              <span className="cursor-pointer hover:text-gray-300 text-xl">
+              <span
+                onClick={() => {
+                  handleRecommendationClick();
+                  setIsOpen(false);
+                }}
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
                 Recommendation
               </span>
             </Link>

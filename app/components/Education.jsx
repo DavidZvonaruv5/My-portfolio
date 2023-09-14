@@ -9,7 +9,7 @@ export default function Education() {
     const checkHash = () => {
       if (window.location.hash === "#Education") {
         setHighlight(true);
-        setTimeout(() => setHighlight(false), 2000);
+        setTimeout(() => setHighlight(false), 800);
       }
     };
 
