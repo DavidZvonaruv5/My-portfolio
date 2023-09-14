@@ -41,12 +41,12 @@ export default function Contact() {
         className="bg-white p-4 sm:p-10 rounded-lg shadow-md w-full max-w-xs sm:max-w-lg"
       >
         <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-8 font-semibold">
-          Contact Us
+          Contact Me
         </h2>
 
         <div className="mb-4 sm:mb-5">
           <label className="block text-lg sm:text-xl mb-2" htmlFor="first-name">
-            Full Name
+            Name
           </label>
           <input
             className="w-full p-2 border rounded"

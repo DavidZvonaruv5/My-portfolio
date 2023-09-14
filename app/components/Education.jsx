@@ -1,6 +1,27 @@
+"use client";
 import React from "react";
+import { useEffect, useState } from "react";
 
 export default function Education() {
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === "#Education") {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 2000);
+      }
+    };
+
+    checkHash();
+
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+    };
+  }, []);
+
   const education = [
     {
       degree: "BSc in Software Engineering",
@@ -17,10 +38,15 @@ export default function Education() {
 
   return (
     <div className=" text-white bg-zinc-700 ml-3">
-      <h1 className="text-2xl underline">Education</h1>
+      <h1
+        id="Education"
+        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+      >
+        Education
+      </h1>
       <br />
 
-      <div id="Education" className="text-base leading-7">
+      <div className="text-base leading-7">
         {education.map((edu, index) => (
           <div key={index} className="mb-4 hover:text-lime-100">
             <h3 className="text-l font-semibold">{edu.degree}</h3>

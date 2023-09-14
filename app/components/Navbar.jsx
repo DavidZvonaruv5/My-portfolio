@@ -17,6 +17,11 @@ export default function Navbar() {
     }
   };
 
+  const handleEducationClick = () => {
+    window.location.hash = "";
+    window.location.hash = "Education";
+  };
+
   return (
     <nav className="bg-[#010101] text-white  py-2 w-full shadow-2xl relative">
       <div className="mx-auto px-4 flex flex-wrap items-center justify-between w-full">
@@ -74,7 +79,10 @@ export default function Navbar() {
             <li>
               <Link href="/#Education">
                 <span
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    handleEducationClick();
+                    setIsOpen(false);
+                  }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
                   Education
@@ -149,7 +157,13 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/#Education">
-              <span className="cursor-pointer hover:text-gray-300 text-xl">
+              <span
+                onClick={() => {
+                  handleEducationClick();
+                  setIsOpen(false);
+                }}
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
                 Education
               </span>
             </Link>
