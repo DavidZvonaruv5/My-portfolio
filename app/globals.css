@@ -20,7 +20,7 @@
   }
 
   .gradient-text {
-    background: linear-gradient(270deg, lightblue, hsla(194, 100%, 50%, 0.7));
+    background: linear-gradient(270deg, lightblue, goldenrod);
     background-size: 200% 200%;
     animation: gradient-animation 3s infinite linear;
     -webkit-background-clip: text;
