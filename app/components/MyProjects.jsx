@@ -1,8 +1,28 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Project from "./Project";
+import { useState, useEffect } from "react";
 
 export default function MyProjects({ projects }) {
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === "#projects") {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 800);
+      }
+    };
+
+    checkHash();
+
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+    };
+  }, []);
   if (!projects) {
     return <div>Loading...</div>;
   }
@@ -15,7 +35,13 @@ export default function MyProjects({ projects }) {
 
   return (
     <div id="projects" className="text-white bg-zinc-700  ml-6 mb-5">
-      <h1 className="text-2xl underline mt-2  ">My Projects</h1>
+      <h1
+        className={`text-2xl underline mt-2  ${
+          highlight ? "gradient-text-2" : ""
+        }`}
+      >
+        My Projects
+      </h1>
       <Image
         src={projects[0].owner.avatar_url}
         alt="David Zvonaruv profile picture"

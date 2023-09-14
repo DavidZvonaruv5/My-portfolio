@@ -11,6 +11,20 @@ import {
 import { TbBrandNextjs } from "react-icons/tb";
 import { BiLogoJava } from "react-icons/bi";
 export default function Project({ project, index }) {
+  const truncateInfo = (str, wordLimit = 20) => {
+    const words = str.split(" ");
+    if (words.length > wordLimit) {
+      return (
+        <>
+          <span>{words.slice(0, wordLimit).join(" ")}</span>
+          <span className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow">
+            ...For more
+          </span>
+        </>
+      );
+    }
+    return str;
+  };
   const icons = [
     <div className="flex" key="0">
       <div className="mr-2">☁</div>
@@ -56,7 +70,11 @@ export default function Project({ project, index }) {
         <div className="mr-2">{icons[index]}</div>
         {project.name}
       </div>
-      <p className="text-sm mr-2 mb-2 hover:text-lime-100">{info[index]}</p>
+
+      <p className="text-sm mr-2 mb-2 hover:text-lime-100">
+        {" "}
+        {truncateInfo(info[index])}
+      </p>
     </>
   );
 }

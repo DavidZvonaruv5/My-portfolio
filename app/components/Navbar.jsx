@@ -28,6 +28,14 @@ export default function Navbar() {
     window.location.hash = "";
     window.location.hash = "Aboutme";
   };
+  const handleSkillsClick = () => {
+    window.location.hash = "";
+    window.location.hash = "Skills";
+  };
+  const handleProjectsClick = () => {
+    window.location.hash = "";
+    window.location.hash = "projects";
+  };
 
   return (
     <nav className="bg-[#010101] text-white  py-2 w-full shadow-2xl relative">
@@ -76,7 +84,10 @@ export default function Navbar() {
             <li>
               <Link href="/#Aboutme">
                 <span
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    handleAboutmeClick();
+                    setIsOpen(false);
+                  }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
                   About Me
@@ -112,7 +123,10 @@ export default function Navbar() {
             <li>
               <Link href="/#Skills">
                 <span
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    handleSkillsClick();
+                    setIsOpen(false);
+                  }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
                   Skills
@@ -122,7 +136,10 @@ export default function Navbar() {
             <li>
               <Link href="/#projects">
                 <span
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    handleProjectsClick();
+                    setIsOpen(false);
+                  }}
                   className="cursor-pointer hover:text-gray-300 text-xl"
                 >
                   My Projects
@@ -188,7 +205,6 @@ export default function Navbar() {
               <span
                 onClick={() => {
                   handleRecommendationClick();
-                  setIsOpen(false);
                 }}
                 className="cursor-pointer hover:text-gray-300 text-xl"
               >
@@ -198,7 +214,12 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/#Skills">
-              <span className="cursor-pointer hover:text-gray-300 text-xl">
+              <span
+                onClick={() => {
+                  handleSkillsClick();
+                }}
+                className="cursor-pointer hover:text-gray-300 text-xl"
+              >
                 Skills
               </span>
             </Link>
@@ -206,7 +227,9 @@ export default function Navbar() {
           <li>
             <Link href="/#projects">
               <span
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  handleProjectsClick();
+                }}
                 className="cursor-pointer hover:text-gray-300 text-xl"
               >
                 My Projects

@@ -1,6 +1,26 @@
+"use client";
 import React from "react";
+import { useState, useEffect } from "react";
 
 export default function Skills() {
+  const [highlight, setHighlight] = useState(false);
+
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === "#Skills") {
+        setHighlight(true);
+        setTimeout(() => setHighlight(false), 800);
+      }
+    };
+
+    checkHash();
+
+    window.addEventListener("hashchange", checkHash);
+
+    return () => {
+      window.removeEventListener("hashchange", checkHash);
+    };
+  }, []);
   const skills = [
     "JavaScript",
     "TypeScript",
@@ -27,7 +47,10 @@ export default function Skills() {
     <div className=" text-white bg-zinc-700 ml-3">
       <br />
 
-      <h1 id="Skills" className="text-2xl underline">
+      <h1
+        id="Skills"
+        className={`text-2xl underline ${highlight ? "gradient-text-2" : ""}`}
+      >
         Skills
       </h1>
       <br />
