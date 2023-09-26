@@ -16,7 +16,7 @@ export default function Project({ project, index }) {
           <span>{words.slice(0, wordLimit).join(" ")}</span>
           <span
             onClick={toggleTruncate}
-            className="hover:cursor-pointer text-sm text-neutral-200  hover:text-neutral-300 hover:glow"
+            className="hover:cursor-pointer  text-sm text-neutral-200  hover:text-neutral-300 hover:glow"
           >
             ...More
           </span>
