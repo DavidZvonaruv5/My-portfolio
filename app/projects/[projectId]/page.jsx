@@ -2,39 +2,19 @@ import fetchRepos from "../../api/repos";
 import "../../globals.css";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  SiTailwindcss,
-  SiReactquery,
-  SiMongodb,
-  SiFastapi,
-  SiJupyter,
-  SiPython,
-  SiMysql,
-} from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoJava } from "react-icons/bi";
-import { Oi } from "next/font/google";
 
 export default async function ProjectPage({ params }) {
-  const icons = ["🐍", "⚙️", "☕", "⚛️", "🎲", "🎨", "🔥", "🌐", "🍶", "🍫"];
   const technologies = [
-    ["Python, ", "Jupyter Notebook, ", "Google Drive API"],
-    ["Python, ", "FastAPI, ", "CRUD, ", "Asynchronous Programming"],
-    ["Java, ", "JavaFX, ", "GUI"],
-    ["NextJS, ", "TailwindCSS, ", "JavaScript, ", "APIs, ", "Nodemailer"],
-    ["Python, ", "C, ", "Console Applications"],
-    ["TailwindCSS, ", "HTML "],
-    [
-      "React, ",
-      "Firebase, ",
-      "MongoDB, ",
-      "Mongoose, ",
-      "Authentication, ",
-      "Authorization",
-    ],
-    ["React, ", "Frontend"],
-    ["Python, ", "Flask"],
-    ["Java, ", "JavaFX, ", "MySQL"],
+    "Pyton, Jupyter, Google Drive API, python widgets",
+    "Python, FastAPI, CRUD, Asynchronous Programming",
+    "Java, JavaFX, GUI",
+    "NextJS, TailwindCSS, JavaScript, APIs, Nodemailer, swiper",
+    "Python, C, Console Applications",
+    "TailwindCSS, HTML ",
+    "React, Firebase, MongoDB,Backend,Mongoose, Authentication, Authorization",
+    "React, Frontend",
+    "Python, Flask",
+    "Java, JavaFX, MySQL",
   ];
 
   const info = [
@@ -58,16 +38,19 @@ export default async function ProjectPage({ params }) {
           <h1 className="text-6xl  mt-2 mb-[40px] text-center">
             {project.name}
           </h1>
-          <h2 className="text-3xl text-center  mb-5 ">Description</h2>
+          <h2 className="text-3xl text-center  mb-5 hover:glow">Description</h2>
           <p className="text-lg mb-10 text-center">{info[index]}</p>
-          <h2 className="text-3xl text-center  mb-5 ">Skills I Learned</h2>
+          <h2 className="text-3xl text-center  mb-5 hover:glow ">
+            Skills I Learned & Technologies used
+          </h2>
           <p className="text-md mb-10 text-center">{technologies[index]}</p>
-          <h2 className="text-3xl text-center  mb-5 ">Technologies used</h2>
-          <div className="text-4xl text-center mb-10">{icons[index]}</div>
-          <h2 className="text-3xl text-center  mb-5 ">GitHub Repository</h2>
+
+          <h2 className="text-3xl text-center  mb-5 hover:glow ">
+            GitHub Repository
+          </h2>
           <Link href={project.html_url} className="text-center">
             <Image
-              className="rounded m-auto"
+              className="rounded-full m-auto"
               src="/GitHub.gif"
               alt="GitHub GIF"
               width={200}

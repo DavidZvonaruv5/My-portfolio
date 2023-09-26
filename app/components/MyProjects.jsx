@@ -1,10 +1,47 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import Project from "./Project";
 import { useState, useEffect } from "react";
+import React from "react";
+import {
+  SiTailwindcss,
+  SiReactquery,
+  SiMongodb,
+  SiFastapi,
+  SiJupyter,
+  SiPython,
+  SiMysql,
+} from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+import { BiLogoJava } from "react-icons/bi";
 
 export default function MyProjects({ projects }) {
+  const icons = [
+    <div className="flex" key="0">
+      <div className="mr-2">☁</div>
+      <SiJupyter />
+    </div>,
+    <SiFastapi key="1" />,
+    "🧹💣",
+    <div className="flex" key="3">
+      <div className="mr-1">🙋🏼‍♂️</div>
+      <TbBrandNextjs />
+    </div>,
+    "🍽🎰",
+    <SiTailwindcss key="5" />,
+    <div className="flex" key="6">
+      <SiReactquery /> <SiMongodb />
+    </div>,
+    <div className="flex" key="7">
+      <SiReactquery /> <SiMongodb />
+    </div>,
+    <SiPython key="8" />,
+    <div className="flex" key="9">
+      <BiLogoJava className="text-3xl mr-2" /> <SiMysql className="text-3xl" />
+    </div>,
+    ,
+  ];
+
   const [highlight, setHighlight] = useState(false);
 
   useEffect(() => {
@@ -28,23 +65,23 @@ export default function MyProjects({ projects }) {
   }
 
   const content = projects.map((project, index) => (
-    <Link href={`/projects/${project.id}`} key={project.id}>
+    <div key={project.id}>
+      <Link href={`/projects/${project.id}`} className="mr-2">
+        <div className="flex text-2xl leading-6">
+          <div className="mr-2">{icons[index]}</div>
+          {project.name}
+        </div>
+      </Link>
       <Project project={project} index={index} />
-    </Link>
+    </div>
   ));
 
   return (
-    <div id="projects" className="text-white bg-transparent  ml-6 mb-5">
-      <h1 className={`text-3xl  mt-2  ${highlight ? "gradient-text-2" : ""}`}>
+    <div id="projects" className="text-white bg-transparent  ml-6 ">
+      <h1 className={`text-3xl mb-5 ${highlight ? "gradient-text-2" : ""}`}>
         My Projects
       </h1>
-      <Image
-        src={projects[0].owner.avatar_url}
-        alt="David Zvonaruv profile picture"
-        width={130}
-        height={130}
-        className="mt-2 rounded-full border-4 border-double border-gray-200"
-      />
+
       {content}
     </div>
   );

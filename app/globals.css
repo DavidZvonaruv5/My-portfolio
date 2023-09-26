@@ -19,10 +19,10 @@
     }
   }
   .custom-bg {
-    background-image: url('../public/Background.jpg');
+    background-image: url('/Background2.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
   }
 
   .gradient-text {

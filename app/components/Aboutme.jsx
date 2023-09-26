@@ -53,7 +53,7 @@ Yet, I don't rest on laurels. Driven by an intrinsic desire for improvement, I c
         {words.map((word, index) => (
           <span
             key={index}
-            className="inline-block transition hover:text-lime-100"
+            className="inline-block transition leading-6 hover:text-lime-100"
           >
             {word}
           </span>

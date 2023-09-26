@@ -46,7 +46,7 @@ export default function Education() {
       </h1>
       <br />
 
-      <div className="text-base leading-7">
+      <div className="text-base leading-8">
         {education.map((edu, index) => (
           <div key={index} className="mb-4 hover:text-lime-100">
             <h3 className="text-l font-semibold">{edu.degree}</h3>

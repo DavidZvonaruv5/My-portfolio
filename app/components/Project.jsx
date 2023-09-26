@@ -1,55 +1,42 @@
-import React from "react";
-import {
-  SiTailwindcss,
-  SiReactquery,
-  SiMongodb,
-  SiFastapi,
-  SiJupyter,
-  SiPython,
-  SiMysql,
-} from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
-import { BiLogoJava } from "react-icons/bi";
+"use client";
+import React, { useState } from "react";
+
 export default function Project({ project, index }) {
+  const [isTruncated, setIsTruncated] = useState(true);
+
+  const toggleTruncate = () => {
+    setIsTruncated(!isTruncated);
+  };
+
   const truncateInfo = (str, wordLimit = 20) => {
     const words = str.split(" ");
-    if (words.length > wordLimit) {
+    if (words.length > wordLimit && isTruncated) {
       return (
-        <>
+        <div className="mb-4">
           <span>{words.slice(0, wordLimit).join(" ")}</span>
-          <span className="hover:cursor-pointer text-sm text-neutral-200 hover:text-neutral-300 hover:glow">
+          <span
+            onClick={toggleTruncate}
+            className="hover:cursor-pointer text-sm text-neutral-200  hover:text-neutral-300 hover:glow"
+          >
             ...More
           </span>
-        </>
+        </div>
       );
     }
-    return str;
+    return (
+      <div className="mb-4">
+        {str}
+        {words.length > wordLimit && (
+          <span
+            onClick={toggleTruncate}
+            className="hover:cursor-pointer text-sm text-neutral-200  hover:text-neutral-300 hover:glow"
+          >
+            ...Less
+          </span>
+        )}
+      </div>
+    );
   };
-  const icons = [
-    <div className="flex" key="0">
-      <div className="mr-2">☁</div>
-      <SiJupyter />
-    </div>,
-    <SiFastapi key="1" />,
-    "🧹💣",
-    <div className="flex" key="3">
-      <div className="mr-1">🙋🏼‍♂️</div>
-      <TbBrandNextjs />
-    </div>,
-    "🍽🎰",
-    <SiTailwindcss key="5" />,
-    <div className="flex" key="6">
-      <SiReactquery /> <SiMongodb />
-    </div>,
-    <div className="flex" key="7">
-      <SiReactquery /> <SiMongodb />
-    </div>,
-    <SiPython key="8" />,
-    <div className="flex" key="9">
-      <BiLogoJava className="text-3xl mr-2" /> <SiMysql className="text-3xl" />
-    </div>,
-    ,
-  ];
 
   const info = [
     "In this project I learned how to use Jupyter / IPython Notebook. I learned how to plot graphs in python and use widgets to display and use GUI. I also learned how to mount google drive and access it using python.",
@@ -66,15 +53,11 @@ export default function Project({ project, index }) {
 
   return (
     <>
-      <div className="flex text-2xl mt-1 p-1 mb-1 ">
-        <div className="mr-2">{icons[index]}</div>
-        {project.name}
-      </div>
-
-      <p className="text-sm mr-2 mb-2 hover:text-lime-100">
-        {" "}
+      <div className="text-sm mr-2 hover:text-lime-100">
         {truncateInfo(info[index])}
-      </p>
+      </div>
     </>
   );
+  {
+  }
 }

@@ -2,6 +2,7 @@ import "./globals.css"
 import Aboutme from "./components/Aboutme"
 import Education from "./components/Education"
 import MyProjects from "./components/MyProjects"
+import Banner from "./components/Banner"
 import Skills from "./components/Skills"
 import Recommendation from "./components/Recommendation"
 import repos from "./api/repos";
@@ -11,7 +12,8 @@ export default async function Home() {
   return (
     <main >
       <div className='flex flex-col  md:flex-row'>
-        <div className="w-screen border-r-2 border-zinc-700 p-2 gap-2 ">
+        <div className="w-screen border-r-2 border-zinc-800 p-2 gap-2 ">
+          <Banner />
           <Aboutme />
           <Education />
           <Recommendation />
