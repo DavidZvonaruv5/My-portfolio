@@ -120,6 +120,16 @@ export default function Contact() {
             Go Back
           </button>
         </div>
+        <div className="text-sm mt-2 sm:mt-4 ">
+          {submitting && (
+            <div
+              className="text-center text-gray-500 mt-2 sm:mt-4"
+              role="alert"
+            >
+              * Sending email, please wait. This may take a few moments...
+            </div>
+          )}
+        </div>
       </form>
     </div>
   );

@@ -17,8 +17,8 @@ import Image from "next/image";
 export default function Banner() {
   const images = ["/2.jpg", "/1.jpg", "/3.jpg"];
   const imageText = [
-    "Welcome to my Portfolio",
-    "Designing with Passion and Precision",
+    "Welcome To My Portfolio",
+    "Designing With Passion And Precision",
     "Let's Build Something Amazing Together",
   ];
   SwiperCore.use([Autoplay]);
@@ -55,7 +55,7 @@ export default function Banner() {
                 className="w-full h-full object-contain sm:object-scale-down"
               />
               <div className="absolute inset-0 flex items-center justify-center">
-                <h1 className="text-sm sm:text-3xl text-[#f5f5f5] hover:glow">
+                <h1 className="text-md sm:text-3xl text-[#f5f5f5] hover:glow">
                   {imageText[index]}
                 </h1>
               </div>
