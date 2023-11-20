@@ -26,7 +26,7 @@ export default function Banner() {
   return (
     <div
       className="relative w-[full
-    ] h-[800px]"
+    ] h-[800px] mr-4"
     >
       <div className="absolute inset-0 z-0 flex transition-transform duration-1000 ease-in-out">
         <Swiper

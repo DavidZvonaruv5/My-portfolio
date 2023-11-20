@@ -20,7 +20,7 @@
   }
   .custom-bg {
     background-image: url('/Background2.png');
-    background-size: cover;
+    background-size:cover;
     background-position: center;
     background-repeat: repeat;
   }
