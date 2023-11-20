@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 
 export default function Aboutme() {
-  const [Showmore, setShowmore] = useState("false");
+  const [Showmore, setShowmore] = useState(true);
   const aboutMeRef = useRef(null);
   const [highlight, setHighlight] = useState(false);
 
