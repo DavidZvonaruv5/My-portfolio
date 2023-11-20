@@ -9,6 +9,9 @@ export default function Project({ project, index }) {
   };
 
   const truncateInfo = (str, wordLimit = 20) => {
+    if (typeof str !== "string") {
+      return null;
+    }
     const words = str.split(" ");
     if (words.length > wordLimit && isTruncated) {
       return (
@@ -58,6 +61,4 @@ export default function Project({ project, index }) {
       </div>
     </>
   );
-  {
-  }
 }
