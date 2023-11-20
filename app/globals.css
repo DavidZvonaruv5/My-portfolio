@@ -18,11 +18,18 @@
       background-position: 0% 50%;
     }
   }
-  .custom-bg {
-    background-image: url('/Background2.png');
-    background-size:cover;
-    background-position: center;
+  .custom-sm-bg {
+    background-image: url('/BackgroundSmall.png');
+    background-size:fill;
     background-repeat: repeat;
+     
+  }
+  
+  .custom-bg {
+    background-image: url('/BackgroundBig.png');
+    background-size:cover;
+    background-repeat: repeat;
+     
   }
 
   .gradient-text {
