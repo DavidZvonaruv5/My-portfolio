@@ -10,6 +10,7 @@ export default async function ProjectPage({ params }) {
     "Java, JavaFX, GUI",
     "NextJS, TailwindCSS, JavaScript, APIs, Nodemailer, swiper",
     "Python, C, Console Applications",
+    "NextJS, TailwindCSS, JavaScript, APIs, Nodemailer, swiper, framer motion, parralex effects",
     "TailwindCSS, HTML ",
     "React, Firebase, MongoDB,Backend,Mongoose, Authentication, Authorization",
     "React, Frontend",
