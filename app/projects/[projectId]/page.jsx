@@ -34,45 +34,54 @@ export default async function ProjectPage({ params }) {
   ];
 
   const projects = await fetchRepos(process.env.API_KEY);
-  const projectDetails = projects.map((project, index) => {
-    if (String(project.id) === params.projectId) {
-      return (
-        <div key={project.id} className="text-white bg-transparent ml-1 mb-5">
-          <h1 className="text-5xl  mt-2 mb-[40px] text-center ">
-            {project.name}
-          </h1>
-          <h2 className="text-3xl text-center  mb-5 hover:glow">Description</h2>
-          <p className="text-lg mb-10 text-center">{info[index]}</p>
-          <h2 className="text-3xl text-center  mb-5 hover:glow ">
-            Skills I Learned & Technologies used
-          </h2>
-          <p className="text-md mb-10 text-center">{technologies[index]}</p>
 
-          <h2 className="text-3xl text-center  mb-5 hover:glow ">
-            GitHub Repository
-          </h2>
-          <Link href={project.html_url} className="text-center">
-            <Image
-              className="rounded-full m-auto"
-              src="/GitHub.gif"
-              alt="GitHub GIF"
-              width={200}
-              height={150}
-            />
-          </Link>
-        </div>
-      );
-    }
-    return null;
-  });
-
-  if (projects === null) {
-    return <div>Loading...</div>;
+  // Check if projects is null or undefined, and return a loading or error message
+  if (!projects) {
+    return (
+      <div>Projects are currently unavailable. Please try again later.</div>
+    );
   }
 
+  // Find the specific project based on params.projectId
+  const projectIndex = projects.findIndex(
+    (project) => String(project.id) === params.projectId
+  );
+
+  // Check if the project was found
+  if (projectIndex === -1) {
+    return <div>Project not found. Please check the project ID.</div>;
+  }
+
+  // At this point, we have a valid project
+  const project = projects[projectIndex];
+
   return (
-    <div className="text-white bg-transparent ml-6 mb-5  min-h-screen flex flex-col ">
-      {projectDetails}
+    <div className="text-white bg-transparent ml-6 mb-5 min-h-screen flex flex-col">
+      <div key={project.id} className="text-white bg-transparent ml-1 mb-5">
+        <h1 className="text-5xl mt-2 mb-[40px] text-center">{project.name}</h1>
+        <h2 className="text-3xl text-center mb-5 hover:glow">Description</h2>
+        <p className="text-lg mb-10 text-center">{info[projectIndex]}</p>
+        <h2 className="text-3xl text-center mb-5 hover:glow">
+          Skills I Learned & Technologies Used
+        </h2>
+        <p className="text-md mb-10 text-center">
+          {technologies[projectIndex]}
+        </p>
+
+        <h2 className="text-3xl text-center mb-5 hover:glow">
+          GitHub Repository
+        </h2>
+        <Link href={project.html_url} passHref>
+          <Image
+            className="rounded-full m-auto"
+            src="/GitHub.gif"
+            alt="GitHub GIF"
+            width={200}
+            height={150}
+            priority
+          />
+        </Link>
+      </div>
     </div>
   );
 }
